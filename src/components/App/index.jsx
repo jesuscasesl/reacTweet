@@ -1,6 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+
+import Header from './../Header';
+import Main from './../Main';
 
 import style from './app.css';
+
+const propTypes = {
+  headerText: PropTypes.string
+}
 
 class App extends Component{
   constructor(){
@@ -8,10 +15,18 @@ class App extends Component{
   }
 
   render(){
+    const headerText = 'ReacTweet!';
     return (
-        <div><h1>Hello reacTweet!!!</h1></div>
+        <div>
+          <Header
+            headerText={headerText}/>
+
+          <Main />
+        </div>
     )
   }
 }
+
+App.propTypes = propTypes;
 
 export default App;
